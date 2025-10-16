@@ -32,6 +32,27 @@ const App = () => {
         error: null,
     })
 
+    const fetchISS = async () => {
+        try {
+            const res = await axios.get("http://api.open-notify.org/iss-now.json")
+            const data = res.data
+
+            dispatch({
+                type: "SET_DATA",
+                payload: {
+                    latitude: Number(data.iss_position.latitude),
+                    longitude: Number(data.iss_position.longitude),
+                    timestamp: data.timestamp,
+                }
+            })
+        } catch (err) {
+            dispatch({
+                type: "SET_ERROR",
+                payload: "Failed to fetch ISS location"
+            })
+        }
+    }
+
   return (
     <div>App</div>
   )
