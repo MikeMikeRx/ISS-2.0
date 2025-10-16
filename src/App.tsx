@@ -60,7 +60,24 @@ const App = () => {
     }, [])
 
   return (
-    <div>App</div>
+    <div className="container">
+        <h1 className="title">International Space Station</h1>
+
+        {state.error ? (
+            <p style={{color: "red"}}>{state.error}</p>
+            ) : (
+                <>
+                    <p>Latitude: {state.latitude.toFixed(4)}</p>
+                    <p>Longitude: {state.longitude.toFixed(4)}</p>
+                    <p>Last Updated: {new Date(state.timestamp * 1000).toLocaleTimeString()}</p>
+                </>
+            )}
+
+            <div className="map-container">
+                <LiveMap latitude={state.latitude} longitude={state.longitude} />
+            </div>
+        
+    </div>
   )
 }
 
