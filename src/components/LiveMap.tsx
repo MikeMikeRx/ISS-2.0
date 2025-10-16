@@ -2,6 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet"
 import L from "leaflet"
 import { useEffect } from "react"
 import "leaflet/dist/leaflet.css"
+import sateliteIcon from "../assets/img/Icon.png"
 
 interface LiveMapProps {
     latitude: number
