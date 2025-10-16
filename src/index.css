@@ -1,3 +1,39 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+ * {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-image: url("./assets/img/Background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-color: black;
+    color: aliceblue;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .title {
+    margin-top: 2rem;
+    font-size: 4rem;
+}
+
+.container p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.map-container {
+    margin: 3rem 0;
+    padding: 0.3rem;
+    border: 0.3rem solid rgb(49, 0, 128);
+    border-radius: 0.4rem;
+    box-shadow: 20px 20px 100px rgba(255, 255, 255, 0.692);
+}
