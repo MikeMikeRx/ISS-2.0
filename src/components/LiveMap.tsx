@@ -4,8 +4,18 @@ import { useEffect } from "react"
 import "leaflet/dist/leaflet.css"
 
 interface LiveMapProps {
-    lat: number
-    lon: number
+    latitude: number
+    longitude: number
+}
+
+const RecenterMap = ({ latitude, longitude }: { latitude: number; longitude: number }) => {
+    const map = useMap()
+
+    useEffect(() => {
+        map.setView([latitude, longitude], map.getZoom(), { animate: true })
+    }, [latitude, longitude, map])
+
+    return null
 }
 
 const LiveMap = () => {
