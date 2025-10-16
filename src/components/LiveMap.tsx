@@ -19,6 +19,14 @@ const RecenterMap = ({ latitude, longitude }: { latitude: number; longitude: num
     return null
 }
 
+const issIcon = new L.DivIcon({
+    html: `<div class="iss-icon-wrapper"><img src=${sateliteIcon} alt="ISS"/><div>`,
+    className: "",
+    iconSize: [40, 40],
+    iconAnchor: [20, 20],
+    popupAnchor: [0, -20],
+})
+
 const LiveMap = () => {
   return (
     <div></div>
