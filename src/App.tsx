@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useReducer } from "react"
 import axios from "axios"
 import LiveMap from "./components/LiveMap"
 
@@ -25,6 +25,13 @@ const issReducer = (state: ISSState, action: ISSAction): ISSState => {
 }
 
 const App = () => {
+    const [state, dispatch] = useReducer(issReducer, {
+        latitude: 0,
+        longitude: 0,
+        timestamp: 0,
+        error: null,
+    })
+
   return (
     <div>App</div>
   )
