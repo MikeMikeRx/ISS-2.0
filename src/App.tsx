@@ -53,6 +53,12 @@ const App = () => {
         }
     }
 
+    useEffect(() => {
+        fetchISS()
+        const interval = setInterval(fetchISS, 5000)
+        return () => clearInterval(interval)
+    }, [])
+
   return (
     <div>App</div>
   )
