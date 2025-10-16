@@ -27,9 +27,29 @@ const issIcon = new L.DivIcon({
     popupAnchor: [0, -20],
 })
 
-const LiveMap = () => {
+const LiveMap = ({ latitude, longitude }: LiveMapProps) => {
   return (
-    <div></div>
+    <MapContainer
+      center={[latitude, longitude]}
+      zoom={5}
+      minZoom={2}
+      maxZoom={10}
+      scrollWheelZoom={true}
+      className="map-wrapper"
+      >
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution="&copy; OpenStreetMap contributors"
+        />
+        <Marker position={[latitude, longitude]} icon={issIcon}>
+          <Popup>
+            <h1>ISS is here!</h1><br/>
+            <h3>Latitude: {latitude.toFixed(2)}</h3>
+            <h3>Longitude: {longitude.toFixed(2)}</h3>
+          </Popup>
+        </Marker>
+        <RecenterMap latitude={latitude} longitude={longitude}/>
+    </MapContainer>
   )
 }
 
