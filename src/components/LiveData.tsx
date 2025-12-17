@@ -38,10 +38,11 @@ const LiveData = ({
         
     const [showAdvanced, setShowAdvanced] = useState(false);
     
-    const lighting = ISS_LIGHTING_MAP[visibility ?? ""] ?? {
-    label: "Unknown",
-    description: "Lighting condition data is not available."
-}
+    const lighting = ISS_LIGHTING_MAP[visibility ?? ""] ??
+        {
+            label: "Unknown",
+            description: "Lighting condition data is not available."
+        }
 
 
     return (
@@ -49,14 +50,22 @@ const LiveData = ({
         <div className="row-1">
             <div className="column-1">
                 <h3>Current Position</h3>
-                {longitude !== undefined ? (<p>Latitude: {latitude.toFixed(4)}</p>) : (<p>Latitude data not available.</p>)}
-                {longitude !== undefined ? (<p>Longitude: {longitude.toFixed(4)}</p>) : (<p>Longitude data not available.</p>)}
+                {latitude !== undefined ? (<p>Latitude: {latitude.toFixed(4)}</p>)
+                    : (<p>Latitude data not available.</p>)
+                }
+                {longitude !== undefined ? (<p>Longitude: {longitude.toFixed(4)}</p>)
+                    : (<p>Longitude data not available.</p>)
+                }
             </div>
 
             <div className="column-2">
                 <h3>Altitude and Velocity</h3>
-                {altitude !== undefined ? (<p>Altitude: {altitude.toFixed(2)} km</p>) : (<p>Altitude data not available.</p>)}
-                {velocity !== undefined ? (<p>Velocity: {velocity.toFixed(2)} km/h</p>) : (<p>Velocity data not available.</p>)}
+                {altitude !== undefined ? (<p>Altitude: {altitude.toFixed(2)} km</p>)
+                    : (<p>Altitude data not available.</p>)
+                }
+                {velocity !== undefined ? (<p>Velocity: {velocity.toFixed(2)} km/h</p>)
+                    : (<p>Velocity data not available.</p>)
+                }
             </div>
 
             <div className="column-3">
@@ -66,7 +75,7 @@ const LiveData = ({
                     <strong
                         className={`lighting-status ${visibility === "daylight" ? "sunlit" : "eclipsed" }`}
                     >
-                        {visibility === "daylight" ? "Sunlit" : "In Earth's Shadow"}
+                        {lighting.label}
                     </strong>
                 </p>
 

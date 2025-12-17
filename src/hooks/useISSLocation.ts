@@ -74,9 +74,10 @@ export const useISSLocation = (intervalMs: number = 5000) => {
                 },
             });
         } catch (err) {
+            console.error("ISS API Error:", err);
             dispatch({
                 type: "SET_ERROR",
-                payload: "Failed to fetch ISS location"
+                payload: err instanceof Error ? err.message : "Failed to fetch ISS location"
             });
         }
     }, []);
