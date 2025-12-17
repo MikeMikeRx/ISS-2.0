@@ -21,10 +21,16 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.advanced-container.open .row-2-hidden {
+    opacity: 1;
 }
 
 .row-3 {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .row-3-content {
@@ -91,6 +97,19 @@
 
 .advanced-toggle:hover {
     background-color: rgb(70, 0, 180);
+}
+
+/* ADVANCED CONTAINER SETTINGS */
+.advanced-container {
+    max-height: 0;                     /* start collapsed */
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    padding: 0 0;                  /* remove vertical padding when collapsed */
+}
+
+.advanced-container.open {
+    max-height: 500px;             /* enough for content, can adjust */
+    padding: 1rem 0;               /* restore spacing when expanded */
 }
 
 /* ---------- RESPONSIVE ---------- */

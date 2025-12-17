@@ -65,18 +65,29 @@ const LiveData = ({
             </div>
         </div>
 
-        {showAdvanced && (<div className="row-2-hidden">
-            <div className="column-4">
-                <h3>Time Information</h3>
-                {daynum !== undefined ? (<p>Julian Day (astronomical time): {daynum}</p>) : (<p>Day number data not available.</p>)}
-            </div>
+        <div className={`advanced-container ${showAdvanced ? "open" : ""}`}>
+            <div className="row-2-hidden">
+                <div className="column-4">
+                    <h3>Time Information</h3>
+                    {daynum !== undefined 
+                        ? (<p>Julian Day (astronomical time): {daynum}</p>)
+                        : (<p>Day number data not available.</p>)
+                    }
+                </div>
 
-            <div className="column-5">
-                <h3>Solar Position</h3>
-                {solar_lat !== undefined ? (<p>Solar Latitude: {solar_lat.toFixed(4)}</p>) : (<p>Solar latitude data not available.</p>)}
-                {solar_lon !== undefined ? (<p>Solar Longitude: {solar_lon.toFixed(4)}</p>) : (<p>Solar longitude data not available.</p>)}
+                <div className="column-5">
+                    <h3>Solar Position</h3>
+                    {solar_lat !== undefined
+                        ? (<p>Solar Latitude: {solar_lat.toFixed(4)}</p>)
+                        : (<p>Solar latitude data not available.</p>)
+                    }
+                    {solar_lon !== undefined
+                        ? (<p>Solar Longitude: {solar_lon.toFixed(4)}</p>)
+                        : (<p>Solar longitude data not available.</p>)
+                    }
+                </div>
             </div>
-        </div>)}     
+        </div>
 
         <div className="row-3">
             <div className="row-3-content">
