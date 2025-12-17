@@ -73,6 +73,19 @@
     color: #ffffff;
 }
 
+/* LIGHTING STATUS COLORS */
+.lighting-status {
+    transition: color 0.3s ease;
+}
+
+.lighting-status.sunlit {
+    color: rgb(228, 194, 0);
+}
+
+.lighting-status.eclipsed {
+    color: #6ddcff;
+}
+
 /* HINT TEXT */
 .hint {
     font-size: 0.8rem;

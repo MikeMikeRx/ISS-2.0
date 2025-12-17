@@ -60,7 +60,15 @@ const LiveData = ({
 
             <div className="column-3">
                 <h3>Visibility</h3>
-                <p>Status: <strong>{lighting.label}</strong></p>
+                <p>
+                    Status: {" "}
+                    <strong
+                        className={`lighting-status ${visibility === "daylight" ? "sunlit" : "eclipsed" }`}
+                    >
+                        {visibility === "daylight" ? "Sunlit" : "In Earth's Shadow"}
+                    </strong>
+                </p>
+
                 <p className="hint">{lighting.description}</p>
             </div>
         </div>
