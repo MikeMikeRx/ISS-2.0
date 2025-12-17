@@ -2,9 +2,9 @@
 
 A React application that displays the real-time location of the International Space Station (ISS) on an interactive map.
 
-The application shows details about the current position based on geographic coordinates, along with additional information such as orbital velocity and lighting status. The lighting status indicates whether the ISS is illuminated by the Sun (potentially visible under good conditions) or passing through Earth’s shadow.
+The application shows details about the current position based on geographic coordinates, along with additional information such as orbital velocity and lighting status. The lighting status indicates whether the ISS is illuminated by the Sun (potentially visible from Earth under good conditions) or passing through Earth’s shadow.
 
-It also includes advanced data such as astronomical time displayed in Julian Day format, used in astronomy, and information about the current solar position.
+It also provides advanced information, including astronomical time displayed in Julian Day format and details about the current solar position.
 
 ## API
 - https://api.wheretheiss.at/v1/satellites/25544
@@ -32,7 +32,7 @@ It also includes advanced data such as astronomical time displayed in Julian Day
 
 ### Installation
 Clone the repository and install dependencies:
-- git clone: https://github.com/your-username/iss-live-tracker.git
+- git clone: https://github.com/MikeMikeRx/ISS-2.0.git
 - cd iss-live-tracker
 - npm install
 
