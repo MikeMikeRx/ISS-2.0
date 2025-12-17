@@ -6,7 +6,13 @@ const App = () => {
     const {
         latitude,
         longitude,
+        altitude,
+        velocity,
+        visibility,
         timestamp,
+        solar_lat,
+        solar_lon,
+        daynum,
         error,
         loading,
     } = useISSLocation(5000);
@@ -20,7 +26,16 @@ const App = () => {
         {error ? (
             <p style={{color: "red"}}>{error}</p>
             ) : (
-                <LiveData latitude={latitude} longitude={longitude} timestamp={timestamp} />
+                <LiveData
+                    latitude={latitude}
+                    longitude={longitude}
+                    timestamp={timestamp}
+                    altitude={altitude} velocity={velocity}
+                    visibility={visibility}
+                    solar_lat={solar_lat}
+                    solar_lon={solar_lon}
+                    daynum={daynum}
+                />
             )}
 
             <div className="map-container">
