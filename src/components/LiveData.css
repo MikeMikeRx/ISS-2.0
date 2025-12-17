@@ -25,8 +25,17 @@
 
 .row-3 {
     margin-top: 1.5rem;
-    margin-left: 0.5rem;
-    font-size: 1rem;}
+}
+
+.row-3-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #141a2a;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
 
 /* ---------- COLUMNS ---------- */
 
@@ -67,6 +76,23 @@
     font-style: italic;
 }
 
+/* ADVANCED TOGGLE BUTTON */
+.advanced-toggle {
+    margin: 0.3rem 0;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background-color: rgb(49, 0, 128);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.advanced-toggle:hover {
+    background-color: rgb(70, 0, 180);
+}
+
 /* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 900px) {
@@ -80,5 +106,14 @@
 
     .row-3{
         grid-template-columns: 1fr;
+    }
+}
+
+/* RESPONSIVE SPACING FOR MOBILE */
+@media (max-width: 600px) {
+    .row-3-content {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
     }
 }
