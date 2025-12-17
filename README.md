@@ -4,7 +4,7 @@ A React application that displays the real-time location of the International Sp
 
 The application shows details about the current position based on geographic coordinates, along with additional information such as orbital velocity and lighting status. The lighting status indicates whether the ISS is illuminated by the Sun (potentially visible from Earth under good conditions) or passing through Earth’s shadow.
 
-It also provides advanced information, including astronomical time displayed in Julian Day format and details about the current solar position.
+It also includes advanced data, such as astronomical time in Julian Day format and information about the current solar position.
 
 ## API
 - https://api.wheretheiss.at/v1/satellites/25544
