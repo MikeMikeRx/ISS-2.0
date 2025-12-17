@@ -12,7 +12,26 @@ interface LiveDataProps {
     daynum?: number;
 }
 
-const LiveData = ({ latitude, longitude, timestamp, altitude, velocity, visibility, solar_lat, solar_lon, daynum }: LiveDataProps) => (
+const ISS_LIGHTING_MAP: Record<string, {label: string; description: string}> = {
+    "daylight": {
+        label: "Sunlit", 
+        description: "The ISS is illuminated by the Sun."
+    },
+    "eclipsed": {
+        label: "In Earth's Shadow",
+        description: "The ISS is currently passing through Earth's shadow."
+    },
+};
+
+const LiveData = ({ latitude, longitude, timestamp, altitude, velocity, visibility, solar_lat, solar_lon, daynum }: LiveDataProps) => {
+    
+    const lighting = ISS_LIGHTING_MAP[visibility ?? ""] ?? {
+    label: "Unknown",
+    description: "Lighting condition data is not available."
+}
+
+
+    return (
     <div className="wrapper">
         <div className="row-1">
             <div className="column-1">
@@ -28,8 +47,9 @@ const LiveData = ({ latitude, longitude, timestamp, altitude, velocity, visibili
             </div>
 
             <div className="column-3">
-                <h3>Visibility (Can you see it ?)</h3>
-                {visibility ? (<p>The ISS is currently: {visibility}</p>) : (<p>Visibility data not available.</p>)}
+                <h3>Visibility</h3>
+                <p>Status: <strong>{lighting.label}</strong></p>
+                <p className="hint">{lighting.description}</p>
             </div>
         </div>
 
@@ -50,6 +70,8 @@ const LiveData = ({ latitude, longitude, timestamp, altitude, velocity, visibili
     {timestamp !== undefined ? (<h4>Last Update: {new Date(timestamp * 1000).toLocaleTimeString()}</h4>) : (<p>Timestamp data not available.</p>)}
         </div>
     </div>
-);
+
+    );
+};
 
 export default LiveData;
