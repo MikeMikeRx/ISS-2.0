@@ -32,7 +32,7 @@ const LiveMap = ({ latitude, longitude }: LiveMapProps) => {
   return (
     <MapContainer
       center={[latitude, longitude]}
-      zoom={5}
+      zoom={3}
       minZoom={2}
       maxZoom={10}
       scrollWheelZoom={true}
