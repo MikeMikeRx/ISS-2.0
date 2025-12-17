@@ -17,9 +17,27 @@ It also includes advanced data such as astronomical time displayed in Julian Day
 
 ## Screenshots
 
-### 1
+### Index page
 ![shot-1](./public/screenshots/Shot-1.png)
-## 2
+### Advanced info
 ![shot-2](./public/screenshots/Shot-2.png)
-## 3
+### Status changed
 ![shot-3](./public/screenshots/Shot-3.png)
+
+## Installation & Running the Project
+
+### Prerequisites
+- Node.js (v18)
+- npm or yarn
+
+### Installation
+Clone the repository and install dependencies:
+- git clone: https://github.com/your-username/iss-live-tracker.git
+- cd iss-live-tracker
+- npm install
+
+Start the development server
+- npm run dev
+
+The application will be available at:
+- http://localhost:5173
