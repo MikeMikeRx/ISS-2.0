@@ -34,14 +34,15 @@ const App = () => {
 
     const fetchISS = async () => {
         try {
-            const res = await axios.get("http://api.open-notify.org/iss-now.json")
+            const res = await axios.get("https://api.wheretheiss.at/v1/satellites/25544")
             const data = res.data
+            console.log(res);            
 
             dispatch({
                 type: "SET_DATA",
                 payload: {
-                    latitude: Number(data.iss_position.latitude),
-                    longitude: Number(data.iss_position.longitude),
+                    latitude: data.latitude,
+                    longitude: data.longitude,
                     timestamp: data.timestamp,
                 }
             })
