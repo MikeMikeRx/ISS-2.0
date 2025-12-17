@@ -1,39 +1,45 @@
- * {
-    padding: 0px;
-    margin: 0px;
+/* ---------- RESET ---------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* ---------- BODY ---------- */
 body {
+    min-height: 100vh;
+    background-color: black;
     background-image: url("./assets/img/Background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100vh;
-    background-color: black;
     color: aliceblue;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* ---------- LAYOUT ---------- */
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
 }
 
+/* ---------- TITLE ---------- */
 .container .title {
-    margin-top: 2rem;
-    font-size: 4rem;
+    margin: 2rem 0 1.5rem;
+    text-align: center;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    letter-spacing: 1px;
 }
 
-.container p {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-}
-
+/* ---------- MAP ---------- */
 .map-container {
+    width: 100%;
     margin: 3rem 0;
-    padding: 0.3rem;
-    border: 0.3rem solid rgb(49, 0, 128);
-    border-radius: 0.4rem;
-    box-shadow: 20px 20px 100px rgba(255, 255, 255, 0.692);
+    padding: 0.4rem;
+    border: 3px solid rgb(49, 0, 128);
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
 }

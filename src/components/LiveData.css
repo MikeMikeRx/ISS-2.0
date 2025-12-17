@@ -1,0 +1,75 @@
+.wrapper {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #0b0f19;
+    color: #e6e6e6;
+    border-radius: 12px;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* ---------- ROWS ---------- */
+
+.row-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.row-2-hidden {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.row-3 {
+    margin-top: 1.5rem;
+    margin-left: 0.5rem;
+    font-size: 1rem;}
+
+/* ---------- COLUMNS ---------- */
+
+.wrapper > div > div {
+    background: #141a2a;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+/* ---------- HEADERS ---------- */
+
+.wrapper h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    color: #6ddcff;
+}
+
+/* ---------- TEXT ---------- */
+
+.wrapper p {
+    margin: 0.25rem 0;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.wrapper p strong {
+    color: #ffffff;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+    .row-1 {
+        grid-template-columns: 1fr;
+    }
+
+    .row-2-hidden {
+        grid-template-columns: 1fr;
+    }
+
+    .row-3{
+        grid-template-columns: 1fr;
+    }
+}

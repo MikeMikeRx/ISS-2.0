@@ -1,3 +1,5 @@
+import "./LiveData.css"
+
 interface LiveDataProps {
     latitude: number;
     longitude: number;
@@ -17,7 +19,6 @@ const LiveData = ({ latitude, longitude, timestamp, altitude, velocity, visibili
                 <h3>Current Position</h3>
                 {longitude !== undefined ? (<p>Latitude: {latitude.toFixed(4)}</p>) : (<p>Latitude data not available.</p>)}
                 {longitude !== undefined ? (<p>Longitude: {longitude.toFixed(4)}</p>) : (<p>Longitude data not available.</p>)}
-                {timestamp !== undefined ? (<p>Last Updated: {new Date(timestamp * 1000).toLocaleTimeString()}</p>) : (<p>Timestamp data not available.</p>)}
             </div>
 
             <div className="column-2">
@@ -43,6 +44,10 @@ const LiveData = ({ latitude, longitude, timestamp, altitude, velocity, visibili
                 {solar_lat !== undefined ? (<p>Solar Latitude: {solar_lat.toFixed(4)}</p>) : (<p>Solar latitude data not available.</p>)}
                 {solar_lon !== undefined ? (<p>Solar Longitude: {solar_lon.toFixed(4)}</p>) : (<p>Solar longitude data not available.</p>)}
             </div>
+        </div>
+
+        <div className="row-3">
+    {timestamp !== undefined ? (<h4>Last Update: {new Date(timestamp * 1000).toLocaleTimeString()}</h4>) : (<p>Timestamp data not available.</p>)}
         </div>
     </div>
 );
