@@ -1,5 +1,6 @@
 import "./LiveData.css"
 import { useState } from "react";
+import { julianToUTC } from "../utils/timeUtils.ts";
 
 interface LiveDataProps {
     latitude: number;
@@ -77,10 +78,18 @@ const LiveData = ({
             <div className="row-2-hidden">
                 <div className="column-4">
                     <h3>Time Information</h3>
-                    {daynum !== undefined 
-                        ? (<p>Julian Day (astronomical time): {daynum}</p>)
-                        : (<p>Day number data not available.</p>)
-                    }
+                    {daynum !== undefined ? (
+                        <div className="astronomical-info">
+                            <p>
+                                <strong>Julian Day (Astronomical Time):</strong> {daynum.toFixed(7)}
+                            </p>
+                            <p>
+                                <strong>UTC Time (Formatted):</strong> {julianToUTC(daynum)}
+                            </p>
+                        </div>
+                    ) : (
+                        <p>Day number data not available.</p>
+                    )}
                 </div>
 
                 <div className="column-5">

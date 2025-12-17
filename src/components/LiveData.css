@@ -95,6 +95,12 @@
     font-style: italic;
 }
 
+/* ASTRONOMICAL INFO */
+.astronomical-info p {
+    margin: 0.25rem 0;
+    font-size: 0.95rem;
+}
+
 /* ADVANCED TOGGLE BUTTON */
 .advanced-toggle {
     margin: 0.3rem 0;
