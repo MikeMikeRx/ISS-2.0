@@ -15,9 +15,9 @@ const LiveData = ({ latitude, longitude, timestamp, altitude, velocity, visibili
         <div className="row-1">
             <div className="column-1">
                 <h3>Current Position</h3>
-                <p>Latitude: {latitude.toFixed(4)}</p>
-                <p>Longitude: {longitude.toFixed(4)}</p>
-                <p>Last Updated: {new Date(timestamp * 1000).toLocaleTimeString()}</p>
+                {longitude !== undefined ? (<p>Latitude: {latitude.toFixed(4)}</p>) : (<p>Latitude data not available.</p>)}
+                {longitude !== undefined ? (<p>Longitude: {longitude.toFixed(4)}</p>) : (<p>Longitude data not available.</p>)}
+                {timestamp !== undefined ? (<p>Last Updated: {new Date(timestamp * 1000).toLocaleTimeString()}</p>) : (<p>Timestamp data not available.</p>)}
             </div>
 
             <div className="column-2">
