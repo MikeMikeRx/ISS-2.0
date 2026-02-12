@@ -4,7 +4,11 @@ A React application that displays the real-time location of the International Sp
 
 **Live Demo**: [View on Vercel](https://iss-20.vercel.app/)
 
+---
+
 ![shot-1](./screenshots/Shot-1.png)
+
+---
 
 The application shows details about the current position based on geographic coordinates, along with additional information such as orbital velocity and lighting status. The lighting status indicates whether the ISS is illuminated by the Sun (potentially visible from Earth under good conditions) or passing through Earth’s shadow.
 
